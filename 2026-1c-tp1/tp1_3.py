@@ -1,5 +1,6 @@
 
+from collections.abc import Sequence
 
-def main(cajas: list[tuple[float, float, float, int]]) -> list[int]:
+def main(cajas: Sequence[tuple[float, float, float]]) -> tuple[float, list[tuple[int, tuple[float, float]]]]:
     raise NotImplementedError
 
