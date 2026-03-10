@@ -13,9 +13,10 @@ class TestTurnos(unittest.TestCase):
 
 class TestCajas(unittest.TestCase):
     def test_cajas_1(self):
-        # Caso facil: una sola caja 10 veces se apila 10 veces
-        orden = cajas([(1, 1, 1, 10)])
-        self.assertEqual(orden, [0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+        # Caso facil: una sola caja, tiene altura 1, el orden es la unica caja con base 1 y altura 1
+        altura, orden = cajas([(1, 1, 1)])
+        self.assertEqual(altura, 1)
+        self.assertEqual(orden, [0, (1, 1)])
 
 if __name__ == "__main__":
     unittest.main()
