@@ -2,7 +2,7 @@ import unittest
 from tp2_1 import main as dojo
 from tp2_2 import main as contenedores
 
-class TestTurnos(unittest.TestCase):
+class TestDojo(unittest.TestCase):
     def test_dojo_1(self):
         s1 = 1
         s2 = 4
