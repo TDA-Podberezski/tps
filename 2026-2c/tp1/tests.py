@@ -1,6 +1,7 @@
 import unittest
 
 from tp1_2 import main as invictos
+from tp1_1 import main as lavarropas
 
 
 def _normalizar(invictas):
@@ -26,6 +27,26 @@ class TestInvictos(unittest.TestCase):
 
         self.assertEqual(_normalizar(invictas), [(4, 2), (4, 5), (5, 1)])
         self.assertEqual(cantidad, 3)
+
+class TestLavarropas(unittest.TestCase):
+
+    def test_no_ropas(self):
+        output = lavarropas("./tp1_files/vacio")
+
+        self.assertEqual(output, [])
+
+    def test_no_incompatibilidades(self):
+        output = lavarropas("./tp1_files/no_incompatibilidades")
+
+        etiquetas = [x[1] for x in output]
+        self.assertEqual(len(set(etiquetas)), 1)
+
+
+    def test_caso_basico(self):
+        output = lavarropas("./tp1_files/enunciado")
+        etiquetas = [x[1] for x in output]
+
+        self.assertEqual(len(set(etiquetas)), 2)
 
 
 if __name__ == "__main__":
